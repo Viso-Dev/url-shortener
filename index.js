@@ -11,6 +11,8 @@ app.use(express.json({
     extended: false
 }));
 
+app.use(express.static('public'));
+
 app.use('/', require('./routes/redirect'));
 app.use('/url', require('./routes/url'));
 
