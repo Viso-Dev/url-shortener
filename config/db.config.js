@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 const username = "nolanfreeman";
-const password = process.env.MONGO_PASS
+const password = process.env.MONGO_PASS;
 const cluster = "cluster0.hj8xjze";
 const dbname = "";
 

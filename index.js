@@ -1,6 +1,8 @@
 const express = require("express");
 const app = express();
 
+require("dotenv").config();
+
 const connection = require('./config/db.config');
 connection.once('open', () => console.log('DB Connected'));
 connection.on('error', () => console.log('Error'));
