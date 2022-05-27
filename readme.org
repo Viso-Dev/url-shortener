@@ -1,0 +1,24 @@
+#+TITLE: viso.to
+
+A simple url shortener like [[https://bit.ly]].
+
+Includes a basic HTML/CSS webpage for users to create links.
+
+* Tech
+
+- express.js
+- mongoose (mongodb)
+
+* An example:
+
+The following link:
+
+https://www.amazon.com/Discourses-Selected-Writings-Penguin-Classics/dp/0140449469/ref=sr_1_2?crid=3RS6YDO0NPAIV&keywords=epictetus&qid=1653635536&sprefix=epictetus%2Caps%2C116&sr=8-2
+
+is shortened to:
+
+[[https://viso.to/4wrgdf3][viso.to/4wrgdf3]]
+
+* Usage
+
+Create your own instance. Or utilize the /public/ page (that is, while it is not inundated with spam).
