@@ -1,9 +1,11 @@
 :PROPERTIES:
 :ID:     557292e1-3453-4af1-9f98-6fae7bf08a19
+:ROAM_ALIASES: viso.to
 :END:
-#+TITLE: viso.to
+#+TITLE: Url Shortener
+#+filetags: web dev
 
-A simple url shortener like [[https://bit.ly]].
+A simple url shortener like [[https://bit.ly]] adapted from [[https://www.section.io/engineering-education/nodejs-url-shortener/][this guide]].
 
 Includes a basic HTML/CSS webpage for users to create links.
 
