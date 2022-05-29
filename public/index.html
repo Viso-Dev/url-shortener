@@ -72,10 +72,16 @@
              text.setSelectionRange(0,99999); // mobile
 
              navigator.clipboard.writeText(text.value);
+             try {
+                document.execCommand("copy");
 
-             let button = document.getElementById("copy-button");
-             button.innerText = "Copied!";
-         };
+                let button = document.getElementById("copy-button");
+                button.innerText = "Copied!";
+             } catch (err) {
+                 console.log("Error copying to clipboard: " + err);
+             }
+
+        };
         </script>
     </body>
 </html>
