@@ -66,13 +66,14 @@
          }
 
          const copyAction = () => {
-             let text = document.getElementById("shortURL");
+             let text = document.getElementById("shortURL").value;
 
-             text.select();
-             text.setSelectionRange(0,99999); // mobile
+             // text.select();
+             // text.setSelectionRange(0,99999); // mobile
 
              try {
-                document.execCommand("copy");
+                // document.execCommand("copy");
+                navigator.clipboard.writeText(text);
 
                 let button = document.getElementById("copy-button");
                 button.innerText = "Copied!";
