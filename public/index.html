@@ -1,0 +1,81 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>URL Shortener</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+        <!-- Place favicon.ico in the root directory -->
+
+        <link rel="stylesheet" href="styles.css" type="text/css" />
+    </head>
+    <body>
+        <!--[if lt IE 8]>
+            <p class="browserupgrade">
+            You are using an <strong>outdated</strong> browser. Please
+            <a href="http://browsehappy.com/">upgrade your browser</a> to improve
+            your experience.
+            </p>
+        <![endif]-->
+        <div id="main-container">
+            <h1>URL Shortener</h1>
+            <div id="form-container">
+                <form autocomplete="off" method="POST" id="longUrlEntry" action="/url/shorten">
+                    <input id="longURL" type="text" name="longURL" value="" placeholder="Enter a Url ..." />
+                    <button type="submit">Shorten</button>
+                </form>
+                <div id="short-url-container">
+                    <input id="shortURL" type="text" name="shortURL" value="" disabled />
+                    <button id="copy-button" onclick="copyAction()">Copy</button>
+                </div>
+            </div>
+        </div>
+
+        <script type="text/javascript">
+            const form = document.getElementById('longUrlEntry');
+
+            form.addEventListener('submit', evt => {
+                evt.preventDefault();
+
+                const longURL = document.getElementById('longURL');
+
+                fetch('/url/shorten', {
+                    method: 'POST',
+                    body: JSON.stringify({
+                        longURL: longURL.value
+                    }),
+                    headers: {
+                        "Content-Type": "application/json; charset=UTF-8"
+                    }
+                }).then(res => {
+                    return res.json();
+                }).then(data => {
+                    document.getElementById('shortURL').value = data.shortURL;
+                    resetCopyState();
+                }).catch(err => {
+                    console.log(error);
+                });
+            });
+
+         const resetCopyState = () => {
+             let button = document.getElementById("copy-button");
+             button.innerText = "Copy";
+         }
+
+         const copyAction = () => {
+             let text = document.getElementById("shortURL");
+
+             text.select();
+             text.setSelectionRange(0,99999); // mobile
+
+             navigator.clipboard.writeText(text.value);
+
+             let button = document.getElementById("copy-button");
+             button.innerText = "Copied!";
+         };
+        </script>
+    </body>
+</html>
