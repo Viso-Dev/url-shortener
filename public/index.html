@@ -28,7 +28,7 @@
                     <button type="submit">Shorten</button>
                 </form>
                 <div id="short-url-container">
-                    <input id="shortURL" type="text" name="shortURL" value="" readonly="readonly" />
+                    <input id="shortURL" type="text" name="shortURL" value="" disabled />
                     <button id="copy-button" onclick="copyAction()">Copy</button>
                 </div>
             </div>
@@ -65,14 +65,11 @@
              button.innerText = "Copy";
          }
 
-         const copyAction = () => {
+         const copyAction = async () => {
              let text = document.getElementById("shortURL").value;
 
-             // text.select();
-             // text.setSelectionRange(0,99999); // mobile
-
              try {
-                navigator.clipboard.writeText(text);
+                await navigator.clipboard.writeText(text);
 
                 let button = document.getElementById("copy-button");
                 button.innerText = "Copied!";
