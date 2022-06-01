@@ -28,7 +28,7 @@
                     <button type="submit">Shorten</button>
                 </form>
                 <div id="short-url-container">
-                    <input id="shortURL" type="text" name="shortURL" value="" disabled />
+                    <input id="shortURL" type="text" name="shortURL" value="" readonly="readonly" />
                     <button id="copy-button" onclick="copyAction()">Copy</button>
                 </div>
             </div>
@@ -72,7 +72,6 @@
              // text.setSelectionRange(0,99999); // mobile
 
              try {
-                // document.execCommand("copy");
                 navigator.clipboard.writeText(text);
 
                 let button = document.getElementById("copy-button");
