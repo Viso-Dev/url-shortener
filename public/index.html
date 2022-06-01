@@ -53,7 +53,7 @@
                 }).then(res => {
                     return res.json();
                 }).then(data => {
-                    document.getElementById('shortURL').value = data.shortURL;
+                    document.getElementById('shortURL').value = data.shortURL || "";
                     resetCopyState();
                 }).catch(err => {
                     console.log(error);
