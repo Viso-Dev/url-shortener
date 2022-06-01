@@ -37,7 +37,7 @@ h1 {
     display: flex;
 }
 
-input {
+input, textarea {
     height: 2.5em;
     border: none;
     border-radius: 5px;
@@ -49,6 +49,7 @@ input {
     background-color: #FCFFFC;
     font-family: "Lucida Console", "Courier New", monospace;
 }
+
 
 #shortURL {
     color: #FCFFFC;
