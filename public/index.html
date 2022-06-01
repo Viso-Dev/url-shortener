@@ -28,7 +28,7 @@
                     <button type="submit">Shorten</button>
                 </form>
                 <div id="short-url-container">
-                    <textarea id="shortURL" name="shortURL" ></textarea>
+                    <textarea id="shortURL" name="shortURL" spellcheck="false"></textarea>
                     <button id="copy-button" onclick="copyAction()">Copy</button>
                 </div>
             </div>
@@ -65,7 +65,7 @@
              button.innerText = "Copy";
          }
 
-         const copyAction = async () => {
+         const copyAction = () => {
              let text = document.getElementById("shortURL");
              text.select();
 

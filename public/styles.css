@@ -50,10 +50,10 @@ input, textarea {
     font-family: "Lucida Console", "Courier New", monospace;
 }
 
-
 #shortURL {
     color: #FCFFFC;
     background-color: #929392;
+    text-decoration: node;
 }
 
 button {
