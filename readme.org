@@ -5,7 +5,9 @@
 #+TITLE: Url Shortener
 #+filetags: web dev
 
-A simple url shortener like [[https://bit.ly]] adapted from [[https://www.section.io/engineering-education/nodejs-url-shortener/][this guide]].
+*NOTE: I do not have the domain "viso.to" any longer. Links listed below are for demonstration purposes only.*
+
+A simple url shortener like [[https://bit.ly]].
 
 Includes a basic HTML/CSS webpage for users to create links.
 
